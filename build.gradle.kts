@@ -5,7 +5,6 @@ plugins {
 
 subprojects {
 
-    // 1.3.21
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
     repositories {

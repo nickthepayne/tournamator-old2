@@ -3,5 +3,5 @@ plugins {
 }
 
 application {
-    mainClassName = "ch.tournamator.TournamatorAppKt"
+    mainClassName = "ch.tournamator.AppKt"
 }
