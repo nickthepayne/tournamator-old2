@@ -1,12 +1,11 @@
 package ch.tournamator
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello sub-world."
-        }
-}
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+
+@SpringBootApplication
+class Application
 
 fun main(args: Array<String>) {
-    println(App().greeting)
+    SpringApplication.run(Application::class.java, *args)
 }
