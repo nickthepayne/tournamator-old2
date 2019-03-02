@@ -13,4 +13,12 @@ application {
 dependencies {
     compile(kotlin("stdlib"))
     compile("org.springframework.boot:spring-boot-starter-web")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.4.0")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
 }
