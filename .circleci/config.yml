@@ -49,11 +49,14 @@ jobs:
             - deploy
 
   deploy:
-    attach_workspace:
-      at: .
     docker:
       - image: google/cloud-sdk
     steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Make sure we are in the right directory
+          command: ls -a
       - run:
           name: Auth gCloud SDK
           command: bash ./deploy/gcloud-auth.sh
