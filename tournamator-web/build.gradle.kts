@@ -6,6 +6,6 @@ plugins {
 
 tasks.register<NpmTask>("build") {
     setArgs(listOf("run", "build"))
-}
 
-tasks.getByName("build").dependsOn("npmInstall")
+    dependsOn("npmInstall")
+}
