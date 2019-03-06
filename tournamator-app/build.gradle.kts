@@ -9,7 +9,7 @@ plugins {
 }
 
 application {
-    mainClassName = "ch.tournamator.App"
+    mainClassName = "ch.tournamator.AppKt"
 }
 
 dependencies {

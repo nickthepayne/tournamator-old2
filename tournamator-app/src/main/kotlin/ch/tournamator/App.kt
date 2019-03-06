@@ -1,25 +1,11 @@
 package ch.tournamator
 
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.builder.SpringApplicationBuilder
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory
-import org.springframework.boot.web.servlet.server.ServletWebServerFactory
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
-import org.springframework.context.annotation.Bean
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class App : SpringBootServletInitializer() {
+class App
 
-    override fun configure(appBuilder: SpringApplicationBuilder): SpringApplicationBuilder {
-        return appBuilder.sources(App::class.java)
-    }
-
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            SpringApplication.run(App::class.java, *args)
-        }
-    }
-
+fun main(args: Array<String>) {
+    runApplication<App>(*args)
 }
