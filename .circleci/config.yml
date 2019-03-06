@@ -4,6 +4,8 @@
 #
 version: 2
 jobs:
+
+
   build:
     docker:
       # specify the version you desire here
@@ -40,3 +42,21 @@ jobs:
 
       # run tests!
       - run: gradle test
+      - run: gradle buildDeployableJar
+      - persist_to_workspace:
+          root: .
+          paths:
+            - tournamator-app/build/libs
+            - Dockerfile
+            - deploy
+
+  deploy:
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - run:
+          name: Auth gCloud SDK
+          command: bash ./deploy/gcloud-auth.sh
+      - run:
+          name: Deploy to gCloud
+          command: bash ./deploy/gcloud-deploy.sh
