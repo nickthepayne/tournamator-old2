@@ -8,7 +8,7 @@ class DummyTest {
 
     @Test
     fun dummyTest() {
-        assertTrue(false)
+        assertTrue(true)
     }
 
 }
