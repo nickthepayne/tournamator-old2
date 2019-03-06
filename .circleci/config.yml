@@ -41,6 +41,12 @@ jobs:
       # run tests!
       - run: gradle test
       - run: gradle buildDeployableJar
+      - run:
+          name: List current files
+          command: ls -l
+      - run:
+          name: List files inside bootJar
+          command: jar -tf tournamator-app/build/libs/tournamator-app.jar
       - persist_to_workspace:
           root: .
           paths:
