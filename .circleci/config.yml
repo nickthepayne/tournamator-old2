@@ -44,9 +44,10 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - tournamator-app/build/libs
+            - tournamator-app
             - Dockerfile
             - deploy
+            - app.yaml
 
   deploy:
     docker:
