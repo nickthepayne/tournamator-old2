@@ -15,7 +15,6 @@ application {
 dependencies {
     compile(kotlin("stdlib"))
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("javax.servlet:javax.servlet-api:4.0.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.4.0")
 }
 
