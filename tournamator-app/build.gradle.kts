@@ -19,13 +19,19 @@ dependencies {
 }
 
 tasks.register("buildDeployableJar") {
-    dependsOn("bootJar", ":tournamator-web:build")
+    dependsOn("bootJar")
+}
+
+tasks.bootJar {
+    dependsOn(":tournamator-web:build")
 }
 
 tasks.getByName<BootJar>("bootJar") {
+
     from("../tournamator-web/build") {
         into("public")
     }
+
 }
 
 tasks.withType<Test> {
