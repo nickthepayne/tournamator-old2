@@ -49,6 +49,8 @@ jobs:
             - deploy
 
   deploy:
+    attach_workspace:
+      at: .
     docker:
       - image: google/cloud-sdk
     steps:
