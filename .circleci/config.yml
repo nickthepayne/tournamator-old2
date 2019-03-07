@@ -55,7 +55,7 @@ jobs:
             - deploy
             - app.yaml
 
-  deploy:
+  deploy_prod:
     docker:
       - image: google/cloud-sdk
     steps:
@@ -76,6 +76,6 @@ workflows:
   build_deploy:
     jobs:
       - build
-      - deploy:
+      - deploy_prod:
           requires:
             - build

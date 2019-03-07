@@ -2,10 +2,6 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     application
-    kotlin("jvm")
-    id("org.jetbrains.kotlin.plugin.spring") version "1.3.21"
-    id("org.springframework.boot") version "2.1.3.RELEASE"
-    id("io.spring.dependency-management") version "1.0.7.RELEASE"
 }
 
 application {
@@ -13,9 +9,10 @@ application {
 }
 
 dependencies {
-    compile(kotlin("stdlib"))
     compile("org.springframework.boot:spring-boot-starter-web")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.4.0")
+    compile("org.jetbrains.kotlin:kotlin-reflect:1.3.21")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+")
+    compile(project(":tournamator-data"))
 }
 
 tasks.register("buildDeployableJar") {

@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+#  server:
+#    image: gradle:5.2.1-jdk8
+#    volumes:
+#      - ./:/usr/src/app
+#    working_dir: /usr/src/app
+#    command: sh -c "gradle bootRun"
+#    depends_on:
+#      - mongo
+#    ports:
+#      - "8080:8080"
+
+  client:
+    image: node
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c "cd tournamator-web && npm start"
+    ports:
+      - "3000:3000"
+
+  mongo:
+    image: mongo
+    restart: always
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
