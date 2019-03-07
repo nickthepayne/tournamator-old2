@@ -2,4 +2,4 @@ runtime: custom
 env: flex
 
 env_variables:
-  MONGODB_URI: ${MONGODB_URI}
+  MONGODB_URI: ${GCLOUD_MONGODB_URI}
