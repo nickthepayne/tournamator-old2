@@ -62,7 +62,10 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Make sure we are in the right directory
+          name: Create .env file
+          command: echo "DEPLOY_ENV=prod" > .env
+      - run:
+          name: Make sure files are right
           command: ls -a
       - run:
           name: Auth gCloud SDK
