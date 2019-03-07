@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 
@@ -56,11 +56,12 @@ class App extends Component {
                         Tournamator
                     </p>
 
-                    <ul>
+                    <div className="tournament-list">
                         {this.state.tournaments.map((tournament, i) => (
-                            <li key={i}>{tournament.name}</li>
+                            <div key={i}>{tournament.name}>Join</div>
                         ))}
-                    </ul>
+                    </div>
+
                     <input type="text" placeholder="Name" onChange={evt => this.updateInputValue(evt)}/>
                     <button onClick={() => this.createTournament()}>Create new Tournament</button>
                 </header>

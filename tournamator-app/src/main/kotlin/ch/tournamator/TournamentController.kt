@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 class TournamentController(val tournamentRepository: TournamentRepository) {
 
     @GetMapping("/tournaments")
-    fun getTournaments() = tournamentRepository.findAll()
+    fun getTournaments(): MutableList<Tournament> = tournamentRepository.findAll()
 
     @PostMapping("/tournaments")
     fun createTournament(@RequestBody request: CreateTournamentRequest) {
