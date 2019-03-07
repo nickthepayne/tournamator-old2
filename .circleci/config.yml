@@ -40,6 +40,12 @@ jobs:
 
       # run tests!
       - run: gradle test
+      - run:
+          name: Replace MongoDB URI placeholder
+          command: sed -i -e "s/replaceme/${PROD_MONGODB_URI}/g" tournamator-app/src/main/resources/application-prod.yml
+      - run:
+          name: Check URI is set correctly
+          command: cat tournamator-app/src/main/resources/application-prod.yml
       - run: gradle buildDeployableJar
       - run:
           name: List current files
