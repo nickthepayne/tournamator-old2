@@ -12,7 +12,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.jetbrains.kotlin:kotlin-reflect:1.3.21")
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+")
-    compile("com.google.appengine:appengine-api-1.0-sdk:1.9.71")
     compile(project(":tournamator-data"))
 }
 
