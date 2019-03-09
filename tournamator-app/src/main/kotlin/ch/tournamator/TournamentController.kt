@@ -17,7 +17,6 @@ class TournamentController(val tournamentRepository: TournamentRepository) {
 
     @DeleteMapping("/tournaments/{id}")
     fun deleteTournament(@PathVariable id: String) {
-        Thread.sleep(2000)
         tournamentRepository.deleteById(id)
     }
 
